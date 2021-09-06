@@ -27,7 +27,7 @@ class _ContactWidgetState extends State<ContactWidget> {
               '마음 전하실 곳',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 35,
+                fontSize: 25,
                 color: Color.fromARGB(255, 198, 152, 86),
               ),
             ),
@@ -63,7 +63,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               Text(
                                 '아버지 계좌',
                                 style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
                                 ),
                                 textAlign: TextAlign.start,
@@ -92,7 +92,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                       Clipboard.setData(ClipboardData(text: "60204015883"));
                                       ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("60204015883 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
                                     },
-                                    child: Text('복사하기', style: TextStyle(fontSize: 20),),
+                                    child: Text('복사하기', style: TextStyle(fontSize: 15),),
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.brown, // background
                                     ),
@@ -109,7 +109,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               Text(
                                 '어머니 계좌',
                                 style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
                                 ),
                                 textAlign: TextAlign.start,
@@ -138,7 +138,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                       Clipboard.setData(ClipboardData(text: "61306049930"));
                                       ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("61306049930 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
                                     },
-                                    child: Text('복사하기', style: TextStyle(fontSize: 20),),
+                                    child: Text('복사하기', style: TextStyle(fontSize: 15),),
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.brown, // background
                                     ),
@@ -155,7 +155,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               Text(
                                 '신랑 계좌',
                                 style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
                                 ),
                                 textAlign: TextAlign.start,
@@ -186,7 +186,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                           Clipboard.setData(ClipboardData(text: "3333063095577"));
                                           ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("3333063095577 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
                                         },
-                                        child: Text('복사하기', style: TextStyle(fontSize: 20),),
+                                        child: Text('복사하기', style: TextStyle(fontSize: 15),),
                                         style: ElevatedButton.styleFrom(
                                           primary: Colors.brown, // background
                                         ),
@@ -195,21 +195,21 @@ class _ContactWidgetState extends State<ContactWidget> {
                                         width: 10,
                                       ),
                                       SizedBox(
-                                        height: 30,
-                                        width: 70,
+                                        height: 20,
+                                        width: 50,
                                         child: ElevatedButton(
                                           onPressed: () async {
                                             String url = "https://qr.kakaopay.com/281006011188452691004605";
                                             await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
                                           },
                                           child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(20.0),
+                                            borderRadius: BorderRadius.circular(10.0),
                                             child: Image.asset('assets/images/kakaopay.png'),
                                           ),
                                           style: ElevatedButton.styleFrom(
                                             padding: EdgeInsets.only(left: 0, right: 0),
                                             shape: new RoundedRectangleBorder(
-                                              borderRadius: new BorderRadius.circular(15.0),
+                                              borderRadius: new BorderRadius.circular(10.0),
                                             ),
                                             primary: Colors.transparent,
                                             onPrimary: Colors.transparent,
@@ -273,7 +273,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               Text(
                                 '아버지 계좌',
                                 style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
                                 ),
                                 textAlign: TextAlign.start,
@@ -302,7 +302,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                       Clipboard.setData(ClipboardData(text: "3020307688941"));
                                       ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("3020307688941 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
                                     },
-                                    child: Text('복사하기', style: TextStyle(fontSize: 20),),
+                                    child: Text('복사하기', style: TextStyle(fontSize: 15),),
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.brown, // background
                                     ),
@@ -319,7 +319,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               Text(
                                 '어머니 계좌',
                                 style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
                                 ),
                                 textAlign: TextAlign.start,
@@ -348,7 +348,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                       Clipboard.setData(ClipboardData(text: "23509456008260"));
                                       ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("23509456008260 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
                                     },
-                                    child: Text('복사하기', style: TextStyle(fontSize: 20),),
+                                    child: Text('복사하기', style: TextStyle(fontSize: 15),),
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.brown, // background
                                     ),
@@ -365,7 +365,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               Text(
                                 '신부 계좌',
                                 style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
                                 ),
                                 textAlign: TextAlign.start,
@@ -396,7 +396,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                           Clipboard.setData(ClipboardData(text: "3333152966088"));
                                           ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("3333152966088 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
                                         },
-                                        child: Text('복사하기', style: TextStyle(fontSize: 20),),
+                                        child: Text('복사하기', style: TextStyle(fontSize: 15),),
                                         style: ElevatedButton.styleFrom(
                                           primary: Colors.brown, // background
                                         ),
@@ -405,21 +405,21 @@ class _ContactWidgetState extends State<ContactWidget> {
                                         width: 10,
                                       ),
                                       SizedBox(
-                                        height: 30,
-                                        width: 70,
+                                        height: 20,
+                                        width: 50,
                                         child: ElevatedButton(
                                           onPressed: () async {
                                             String url = "https://qr.kakaopay.com/281006011189849511006206";
                                             await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
                                           },
                                           child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(20.0),
+                                            borderRadius: BorderRadius.circular(10.0),
                                             child: Image.asset('assets/images/kakaopay.png'),
                                           ),
                                           style: ElevatedButton.styleFrom(
                                             padding: EdgeInsets.only(left: 0, right: 0),
                                             shape: new RoundedRectangleBorder(
-                                              borderRadius: new BorderRadius.circular(15.0),
+                                              borderRadius: new BorderRadius.circular(10.0),
                                             ),
                                             primary: Colors.transparent,
                                             onPrimary: Colors.transparent,
@@ -461,14 +461,14 @@ class _ContactWidgetState extends State<ContactWidget> {
                     Text.rich(TextSpan(
                         text: "신랑",
                         style: TextStyle(
-                          fontSize: 35,
+                          fontSize: 20,
                           color: Color.fromARGB(255, 136, 127, 110),
                         ),
                         children: <TextSpan> [
                           TextSpan(
                               text: " 이원희",
                               style: TextStyle(
-                                fontSize: 35,
+                                fontSize: 22,
                                 color: Color.fromARGB(255, 85, 85, 85),
                               )),
                         ]
@@ -486,7 +486,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.call),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         ),
                         IconButton(
                           onPressed: () async {
@@ -495,7 +495,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.mail),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         )
                       ],
                     )
@@ -506,14 +506,14 @@ class _ContactWidgetState extends State<ContactWidget> {
                     Text.rich(TextSpan(
                         text: "신부",
                         style: TextStyle(
-                          fontSize: 35,
+                          fontSize: 20,
                           color: Color.fromARGB(255, 136, 127, 110),
                         ),
                         children: <TextSpan> [
                           TextSpan(
                               text: " 김민아",
                               style: TextStyle(
-                                fontSize: 35,
+                                fontSize: 22,
                                 color: Color.fromARGB(255, 85, 85, 85),
                               )),
                         ]
@@ -531,7 +531,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.call),
                           color: Colors.black87,
-                          iconSize: 30,
+                          iconSize: 25,
                         ),
                         IconButton(
                           onPressed: () async {
@@ -540,7 +540,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.mail),
                           color: Colors.black87,
-                          iconSize: 30,
+                          iconSize: 25,
                         )
                       ],
                     )
@@ -553,7 +553,7 @@ class _ContactWidgetState extends State<ContactWidget> {
               '혼주에게 연락하기',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 35,
+                fontSize: 25,
                 color: Color.fromARGB(255, 85, 85, 85),
               ),
             ),
@@ -567,7 +567,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                       Text(
                         '신랑측 혼주',
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           color: Color.fromARGB(255, 85, 85, 85),
                         ),
                       ),
@@ -584,7 +584,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                       Text(
                         '신부측 혼주',
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           color: Color.fromARGB(255, 85, 85, 85),
                         ),
                       ),
@@ -606,14 +606,14 @@ class _ContactWidgetState extends State<ContactWidget> {
                     Text.rich(TextSpan(
                         text: "아버지",
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 20,
                           color: Color.fromARGB(255, 136, 127, 110),
                         ),
                         children: <TextSpan> [
                           TextSpan(
                               text: " 이의갑",
                               style: TextStyle(
-                                fontSize: 30,
+                                fontSize: 22,
                                 color: Color.fromARGB(255, 85, 85, 85),
                               )),
                         ]
@@ -631,7 +631,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.call),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         ),
                         IconButton(
                           onPressed: () async {
@@ -640,7 +640,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.mail),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         )
                       ],
                     )
@@ -651,14 +651,14 @@ class _ContactWidgetState extends State<ContactWidget> {
                     Text.rich(TextSpan(
                         text: "아버지",
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 20,
                           color: Color.fromARGB(255, 136, 127, 110),
                         ),
                         children: <TextSpan> [
                           TextSpan(
                               text: " 김정일",
                               style: TextStyle(
-                                fontSize: 30,
+                                fontSize: 22,
                                 color: Color.fromARGB(255, 85, 85, 85),
                               )),
                         ]
@@ -676,7 +676,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.call),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         ),
                         IconButton(
                           onPressed: () async {
@@ -685,7 +685,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.mail),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         )
                       ],
                     )
@@ -702,14 +702,14 @@ class _ContactWidgetState extends State<ContactWidget> {
                     Text.rich(TextSpan(
                         text: "어머니",
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 20,
                           color: Color.fromARGB(255, 136, 127, 110),
                         ),
                         children: <TextSpan> [
                           TextSpan(
                               text: " 김연숙",
                               style: TextStyle(
-                                fontSize: 30,
+                                fontSize: 22,
                                 color: Color.fromARGB(255, 85, 85, 85),
                               )),
                         ]
@@ -727,7 +727,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.call),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         ),
                         IconButton(
                           onPressed: () async {
@@ -736,7 +736,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.mail),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         )
                       ],
                     )
@@ -747,14 +747,14 @@ class _ContactWidgetState extends State<ContactWidget> {
                     Text.rich(TextSpan(
                         text: "어머니",
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 20,
                           color: Color.fromARGB(255, 136, 127, 110),
                         ),
                         children: <TextSpan> [
                           TextSpan(
                               text: " 정원순",
                               style: TextStyle(
-                                fontSize: 30,
+                                fontSize: 22,
                                 color: Color.fromARGB(255, 85, 85, 85),
                               )),
                         ]
@@ -772,7 +772,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.call),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         ),
                         IconButton(
                           onPressed: () async {
@@ -781,7 +781,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           },
                           icon: Icon(Icons.mail),
                           color: Colors.black87,
-                          iconSize: 35,
+                          iconSize: 25,
                         )
                       ],
                     )

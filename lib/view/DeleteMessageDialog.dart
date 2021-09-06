@@ -107,7 +107,7 @@ class _DeleteMessageDialogState extends State<DeleteMessageDialog> {
                       style: TextStyle(fontSize: 20),
                     ),
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.only(left: 50, right: 50),
+                      padding: EdgeInsets.only(left: 15, right: 15),
                       primary: Colors.redAccent, // background
                     ),
                   ),
@@ -118,7 +118,7 @@ class _DeleteMessageDialogState extends State<DeleteMessageDialog> {
                       style: TextStyle(fontSize: 20),
                     ),
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.only(left: 50, right: 50),
+                      padding: EdgeInsets.only(left: 15, right: 15),
                       primary: Colors.grey, // background
                     ),
                   ),

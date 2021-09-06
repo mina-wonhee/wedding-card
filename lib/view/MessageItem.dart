@@ -63,7 +63,7 @@ class _MessageItemState extends State<MessageItem> {
                   Text(
                     widget.name,
                     style: TextStyle(
-                      fontSize: 23,
+                      fontSize: 18,
                       color: Colors.black,
                     ),
                   ),
@@ -71,7 +71,7 @@ class _MessageItemState extends State<MessageItem> {
                   Text(
                     widget.message,
                     style: TextStyle(
-                      fontSize: 27,
+                      fontSize: 20,
                       color: Color.fromARGB(255, 84, 84, 84),
                     ),
                   ),
@@ -79,7 +79,7 @@ class _MessageItemState extends State<MessageItem> {
                     widget.dateString,
                     textAlign: TextAlign.end,
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 18,
                       color: Colors.black54,
                     ),
                   ),
@@ -92,7 +92,8 @@ class _MessageItemState extends State<MessageItem> {
                   IconButton(
                       onPressed: () {
                         showDialog(context: context, builder: (BuildContext context) => DeleteMessageDialog(widget.id, widget.pw));
-                      }, 
+                      },
+                      iconSize: 20,
                       icon: Icon(Icons.delete)
                   ),
                 ],

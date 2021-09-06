@@ -62,14 +62,14 @@ class _DdayCalendarWidgetState extends State<DdayCalendarWidget> {
               Text(
                 '10월 16일',
                 style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 20,
                   color: Color.fromARGB(255, 85, 85, 85),
                 ),
               ),
               Text(
                 '토요일 오후 1시 10분',
                 style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 20,
                   color: Color.fromARGB(255, 85, 85, 85),
                 ),
               ),
@@ -236,7 +236,7 @@ class _DdayCalendarWidgetState extends State<DdayCalendarWidget> {
         Text(
           '원희 ♥ 민아의 결혼식이 $dday일 남았습니다.',
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 20,
             color: Color.fromARGB(255, 85, 85, 85),
           ),
         ),

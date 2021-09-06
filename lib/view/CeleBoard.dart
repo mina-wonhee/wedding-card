@@ -34,7 +34,7 @@ class _CeleBoardState extends State<CeleBoard> {
                 '축하 인사를 남겨주세요.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 35,
+                  fontSize: 25,
                   color: Color.fromARGB(255, 198, 152, 86),
                 ),
               ),
@@ -44,7 +44,7 @@ class _CeleBoardState extends State<CeleBoard> {
                   onPressed: () {
                     showDialog(context: context, builder: (BuildContext context) => MessageFormDialog());
                   },
-                  child: Text('축하 메세지 작성', style: TextStyle(fontSize: 30),),
+                  child: Text('축하 메세지 작성', style: TextStyle(fontSize: 20),),
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.only(left:50, right:50),
                     primary: Colors.brown, // background
@@ -52,7 +52,7 @@ class _CeleBoardState extends State<CeleBoard> {
                 ),
               ),
               Container(
-                width: MediaQuery.of(context).size.width * 0.75,
+                width: MediaQuery.of(context).size.width * 0.8,
                 child: StreamBuilder<QuerySnapshot>(
                   stream: _celeMessageStream,
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
