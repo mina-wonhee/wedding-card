@@ -2,18 +2,18 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 final List<String> imgList = [
-  'assets/images/resize35/02.jpg',
-  'assets/images/resize35/11.jpg',
-  'assets/images/resize35/17.jpg',
-  'assets/images/resize35/19.jpg',
-  'assets/images/resize35/22.jpg',
-  'assets/images/resize35/23.jpg',
-  'assets/images/resize35/21.jpg',
-  'assets/images/resize35/29.jpg',
-  'assets/images/resize35/27.jpg',
-  'assets/images/resize35/34.jpg',
-  'assets/images/resize35/30.jpg',
-  'assets/images/resize35/33-1.jpg',
+  'assets/images/resize20/02.jpg',
+  'assets/images/resize20/11.jpg',
+  'assets/images/resize20/17.jpg',
+  'assets/images/resize20/19.jpg',
+  'assets/images/resize20/22.jpg',
+  'assets/images/resize20/23.jpg',
+  'assets/images/resize20/21.jpg',
+  'assets/images/resize20/29.jpg',
+  'assets/images/resize20/27.jpg',
+  'assets/images/resize20/34.jpg',
+  'assets/images/resize20/30.jpg',
+  'assets/images/resize20/33-1.jpg',
 ];
 
 final List<Widget> imageSliders = imgList.map((item) => Container(
