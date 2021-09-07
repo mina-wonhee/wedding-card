@@ -35,16 +35,14 @@ class AlbumWidget extends StatefulWidget {
   _AlbumWidgetState createState() => _AlbumWidgetState();
 }
 
-class _AlbumWidgetState extends State<AlbumWidget> with AutomaticKeepAliveClientMixin {
-  @override
-  bool get wantKeepAlive => true;
+class _AlbumWidgetState extends State<AlbumWidget> {
+
   final CarouselController _controller = CarouselController();
 
   int _current = 0;
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Column(
       children: [
         CarouselSlider(

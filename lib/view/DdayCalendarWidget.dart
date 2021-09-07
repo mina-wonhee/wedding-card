@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DdayCalendarWidget extends StatefulWidget {
-
-  @override
-  _DdayCalendarWidgetState createState() => _DdayCalendarWidgetState();
-}
-
-class _DdayCalendarWidgetState extends State<DdayCalendarWidget> {
+class DdayCalendarWidget extends StatelessWidget {
 
   Widget getDayWidget(bool isActive, int day) {
 
