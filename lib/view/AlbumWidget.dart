@@ -30,7 +30,6 @@ final List<Widget> imageSliders = imgList.map((item) => Container(
           )).toList();
 
 class AlbumWidget extends StatefulWidget {
-  const AlbumWidget({Key? key}) : super(key: key);
 
   @override
   _AlbumWidgetState createState() => _AlbumWidgetState();
@@ -50,9 +49,10 @@ class _AlbumWidgetState extends State<AlbumWidget> with AutomaticKeepAliveClient
       children: [
         CarouselSlider(
           items: imageSliders,
+
           carouselController: _controller,
           options: CarouselOptions(
-              autoPlay: true,
+              // autoPlay: true,
               aspectRatio: 0.9,
               enlargeCenterPage: true,
               onPageChanged: (index, reason) {

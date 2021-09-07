@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "348504161152",
+    "project_id": "wedding-card-324813",
+    "storage_bucket": "wedding-card-324813.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348504161152:android:e694a97273359aeecddf65",
+        "android_client_info": {
+          "package_name": "io.github.mina_wonhee.weddingcard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348504161152-lt3413p4e2m4o465o6v9mi9mm8er37a7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSlD3Lukr7npCP_0sc4PRbdEtOlwVBvkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348504161152-lt3413p4e2m4o465o6v9mi9mm8er37a7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

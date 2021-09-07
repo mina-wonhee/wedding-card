@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactWidget extends StatefulWidget {
-  const ContactWidget({Key? key}) : super(key: key);
 
   @override
   _ContactWidgetState createState() => _ContactWidgetState();
