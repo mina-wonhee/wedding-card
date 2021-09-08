@@ -22,7 +22,7 @@ class _WeddingCardPageState extends State<WeddingCardPage> with AutomaticKeepAli
     super.build(context);
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
