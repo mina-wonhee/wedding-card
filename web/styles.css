@@ -17,11 +17,9 @@
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 9000;
   }
 
   .ctn-preloader .animation-preloader {
-    z-index: 1000;
   }
 
   .ctn-preloader .animation-preloader .spinner {
@@ -126,7 +124,6 @@
     width: 100%;
     height: 100%;
     font-size: 0;
-    z-index: 1;
     pointer-events: none;
   }
 
