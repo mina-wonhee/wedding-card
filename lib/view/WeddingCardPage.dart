@@ -30,7 +30,7 @@ class _WeddingCardPageState extends State<WeddingCardPage> with AutomaticKeepAli
           children: <Widget>[
             HeaderWidget(),
             LetterWidget(),
-            AlbumWidget(),
+            // AlbumWidget(),
             SizedBox(
               height: 200,
             ),
