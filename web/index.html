@@ -12,6 +12,7 @@
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
   -->
   <base href="/wedding-card/">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -33,6 +34,46 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVgs7c9-6I0n7gCsPhxg4mW2wXhr27ad4&libraries=geometry"></script>
 </head>
 <body>
+  <div id="ctn-preloader" class="ctn-preloader">
+    <div class="animation-preloader">
+      <div class="spinner"></div>
+      <div class="txt-loading">
+        <span data-text-preloader="1" class="letters-loading">
+                      1
+                  </span>
+        <span data-text-preloader="0" class="letters-loading">
+                      0
+                  </span>
+        <span data-text-preloader="/" class="letters-loading">
+                      /
+                  </span>
+        <span data-text-preloader="1" class="letters-loading">
+                      1
+                  </span>
+        <span data-text-preloader="6" class="letters-loading">
+                      6
+                  </span>
+      </div>
+      <p class="text-center">Loading</p>
+    </div>
+    <div class="loader">
+      <div class="row">
+        <div class="col-3 loader-section section-left">
+          <div class="bg"></div>
+        </div>
+        <div class="col-3 loader-section section-left">
+          <div class="bg"></div>
+        </div>
+        <div class="col-3 loader-section section-right">
+          <div class="bg"></div>
+        </div>
+        <div class="col-3 loader-section section-right">
+          <div class="bg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
