@@ -32,7 +32,7 @@ class _WeddingCardPageState extends State<WeddingCardPage> with AutomaticKeepAli
             LetterWidget(),
             AlbumWidget(),
             SizedBox(
-              height: 200,
+              height: 100,
             ),
             DdayCalendarWidget(),
             MapWidget(),

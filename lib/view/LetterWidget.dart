@@ -9,7 +9,7 @@ class LetterWidget extends StatelessWidget {
       crossAxisAlignment : CrossAxisAlignment.start,
       children: [
         Container(
-            margin: EdgeInsets.only(top: 150, left: 25, right: 25),
+            margin: EdgeInsets.only(top: 100, left: 25, right: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
