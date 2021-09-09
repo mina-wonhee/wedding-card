@@ -62,7 +62,7 @@ class _MessageFormDialogState extends State<MessageFormDialog> {
       backgroundColor: Colors.transparent,
       child: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(left: 20, top: 20 + 20, right: 20, bottom: 20),
+          padding: EdgeInsets.only(left: 20, top: 40, right: 20, bottom: 20),
           decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               color: Colors.white,

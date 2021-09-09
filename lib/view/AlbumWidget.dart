@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,8 @@ final List<String> imgList = [
   'assets/images/resize20/33-1.jpg',
 ];
 
+
+
 final List<Widget> imageSliders = imgList.map((item) => Container(
             child: Container(
               margin: EdgeInsets.all(5.0),
@@ -23,7 +26,20 @@ final List<Widget> imageSliders = imgList.map((item) => Container(
                   borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   child: Stack(
                     children: <Widget>[
-                      Image.asset(item, fit: BoxFit.cover, width: 1000.0),
+                      CachedNetworkImage(
+                        imageUrl: 'https://mina-wonhee.github.io/wedding-card/assets/' + item,
+                        fit: BoxFit.cover,
+                        width: 1000,
+                        placeholder: (context, url) => Center(
+                          child: SizedBox(
+                            width: 40.0,
+                            height: 40.0,
+                            child: new CircularProgressIndicator(),
+                          ),
+                        ),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
+                      )
+                      // Image.asset(item, fit: BoxFit.cover, width: 1000.0),
                     ],
                   )),
             ),
