@@ -10,28 +10,28 @@ class HeaderWidget extends StatelessWidget {
 
     return Stack(
       children: [
-        Container(
-          constraints: BoxConstraints(
-              minHeight: width, minWidth: double.infinity),
-          child: CachedNetworkImage(
-            imageUrl: 'https://mina-wonhee.github.io/wedding-card/assets/assets/images/resize20/12.jpg',
-            fit: BoxFit.fitWidth,
-            // width: MediaQuery.of(context).size.width,
-            placeholder: (context, url) => Center(
-              child: SizedBox(
-                width: 40.0,
-                height: 40.0,
-                child: new CircularProgressIndicator(),
-              ),
-            ),
-            errorWidget: (context, url, error) => Icon(Icons.error),
-          ),
-        ),
-
-        // Image.asset('assets/images/resize20/12.jpg',
-        //   fit: BoxFit.fitWidth,
-        //   width: MediaQuery.of(context).size.width,
+        // Container(
+        //   constraints: BoxConstraints(
+        //       minHeight: width, minWidth: double.infinity),
+        //   child: CachedNetworkImage(
+        //     imageUrl: 'https://mina-wonhee.github.io/wedding-card/assets/assets/images/resize20/12.jpg',
+        //     fit: BoxFit.fitWidth,
+        //     // width: MediaQuery.of(context).size.width,
+        //     placeholder: (context, url) => Center(
+        //       child: SizedBox(
+        //         width: 40.0,
+        //         height: 40.0,
+        //         child: new CircularProgressIndicator(),
+        //       ),
+        //     ),
+        //     errorWidget: (context, url, error) => Icon(Icons.error),
+        //   ),
         // ),
+
+        Image.asset('assets/images/resize20/12.jpg',
+          fit: BoxFit.fitWidth,
+          width: MediaQuery.of(context).size.width,
+        ),
         Positioned(
           top: imageHeight * 0.05,
           child: SizedBox(
