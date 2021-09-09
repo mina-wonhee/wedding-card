@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:mina_wonhee_wedding/utils/Const.dart';
@@ -23,9 +26,12 @@ class _MessageFormDialogState extends State<MessageFormDialog> {
         CollectionReference celeMessage = FirebaseFirestore.instance
             .collection(Const.CELE_MESSAGE_COLLECTION_NAME);
 
+        var hash = utf8.encode(pwController.text);
+        var shaPw = sha256.convert(hash).toString();
+
         celeMessage.add({
           Const.CELE_MESSAGE_DOC_NAME: nameController.text,
-          Const.CELE_MESSAGE_DOC_PW: pwController.text,
+          Const.CELE_MESSAGE_DOC_PW: shaPw,
           Const.CELE_MESSAGE_DOC_MESSAGE: msgController.text,
           Const.CELE_MESSAGE_DOC_CREATED: FieldValue.serverTimestamp(),
           Const.CELE_MESSAGE_DOC_UPDATED: FieldValue.serverTimestamp()

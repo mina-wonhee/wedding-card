@@ -6,18 +6,16 @@ class MessageItem extends StatefulWidget {
   late final String id;
   late final String name;
   late final String message;
-  late final String pw;
   late final DateTime date;
   late final String dateString;
 
   static const String DATE_TIME_FORMAT = "yyyy년 MM월 dd일 HH:mm";
 
-  MessageItem(String id, String name, String message, DateTime date, String pw) {
+  MessageItem(String id, String name, String message, DateTime date) {
     this.id = id;
     this.name = name;
     this.message = message;
     this.date = date;
-    this.pw = pw;
     dateString = DateFormat(DATE_TIME_FORMAT).format(date).toString();
   }
 
@@ -91,7 +89,7 @@ class _MessageItemState extends State<MessageItem> {
                   // IconButton(onPressed: () {}, icon: Icon(Icons.border_color)),
                   IconButton(
                       onPressed: () {
-                        showDialog(context: context, builder: (BuildContext context) => DeleteMessageDialog(widget.id, widget.pw));
+                        showDialog(context: context, builder: (BuildContext context) => DeleteMessageDialog(widget.id));
                       },
                       iconSize: 20,
                       icon: Icon(Icons.delete)

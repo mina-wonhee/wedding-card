@@ -76,7 +76,6 @@ class _CeleBoardState extends State<CeleBoard> {
                               document[Const.CELE_MESSAGE_DOC_MESSAGE],
                               document[Const.CELE_MESSAGE_DOC_UPDATED] != null?
                               document[Const.CELE_MESSAGE_DOC_UPDATED]?.toDate() : DateTime.now(),
-                              document[Const.CELE_MESSAGE_DOC_PW],
                           );
                         }
                     );

@@ -1,12 +1,14 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:mina_wonhee_wedding/utils/Const.dart';
 
 class DeleteMessageDialog extends StatefulWidget {
   final String id;
-  final String pw;
 
-  DeleteMessageDialog(this.id, this.pw);
+  DeleteMessageDialog(this.id);
 
   @override
   _DeleteMessageDialogState createState() => _DeleteMessageDialogState();
@@ -19,9 +21,15 @@ class _DeleteMessageDialogState extends State<DeleteMessageDialog> {
 
   final _formKey = GlobalKey<FormState>();
 
-  void delete() {
+  Future<void> delete() async {
     if (_formKey.currentState!.validate()) {
-      if(widget.pw == pwController.text) {
+      var value = await FirebaseFirestore.instance.collection(Const.CELE_MESSAGE_COLLECTION_NAME).doc(widget.id).get();
+      var pw = value.get(Const.CELE_MESSAGE_DOC_PW);
+
+      var hash = utf8.encode(pwController.text);
+      var shaPw = sha256.convert(hash).toString();
+
+      if(pw == shaPw) {
         FirebaseFirestore.instance.collection(Const.CELE_MESSAGE_COLLECTION_NAME).doc(widget.id).delete().then((value){
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -40,6 +48,7 @@ class _DeleteMessageDialogState extends State<DeleteMessageDialog> {
         );
         return;
       }
+
       return;
     }
 
