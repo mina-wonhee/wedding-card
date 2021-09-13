@@ -133,7 +133,7 @@ class MapWidget extends StatelessWidget {
                     child: InkWell(
                       onTap: () async {
                         String url = "kakaonavi://route?x=37.34&y=127.1066667";
-                        await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+                        await canLaunch(url) ? await launch(url, universalLinksOnly: true) : throw 'Could not launch $url';
                       },
                       splashColor: Colors.brown.withOpacity(0.5),
                       child: Ink(
@@ -156,7 +156,7 @@ class MapWidget extends StatelessWidget {
                       onTap: () async {
                         String url = "tmap://route?goalx=37.34&goaly=127.1066667&goalname=분당앤스퀘어";
                         // String url = "tmap://?rGoName=분당앤스퀘어&rGoX=37.34&rGoY=127.1066667";
-                        await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+                        await canLaunch(url) ? await launch(url, universalLinksOnly: true) : throw 'Could not launch $url';
                       },
                       splashColor: Colors.brown.withOpacity(0.5),
                       child: Ink(
