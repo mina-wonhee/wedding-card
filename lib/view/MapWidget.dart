@@ -88,7 +88,7 @@ class MapWidget extends StatelessWidget {
                     color: Colors.white,
                     child: InkWell(
                       onTap: () async {
-                        String url = "https://map.kakao.com/link/to/카카오판교오피스,37.34,127.1066667";
+                        String url = "https://map.kakao.com/link/to/분당앤스퀘어,37.34,127.1066667";
                         await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
                       },
                       splashColor: Colors.brown.withOpacity(0.5),
@@ -132,7 +132,7 @@ class MapWidget extends StatelessWidget {
                     color: Colors.white,
                     child: InkWell(
                       onTap: () async {
-                        String url = "kakaonavi://route?y=37.34&x=127.1066667";
+                        String url = "kakaonavi://route?x=37.34&y=127.1066667";
                         await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
                       },
                       splashColor: Colors.brown.withOpacity(0.5),
@@ -154,7 +154,8 @@ class MapWidget extends StatelessWidget {
                     color: Colors.white,
                     child: InkWell(
                       onTap: () async {
-                        String url = "tmap://?rGoName=분당앤스퀘어&rGoX=37.34&rGoY=127.1066667";
+                        String url = "tmap://route?goalx=37.34&goaly=127.1066667&goalname=분당앤스퀘어";
+                        // String url = "tmap://?rGoName=분당앤스퀘어&rGoX=37.34&rGoY=127.1066667";
                         await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
                       },
                       splashColor: Colors.brown.withOpacity(0.5),
