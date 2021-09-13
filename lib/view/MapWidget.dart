@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mina_wonhee_wedding/view/GoogleMapWidget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MapWidget extends StatelessWidget {
 
@@ -72,9 +73,105 @@ class MapWidget extends StatelessWidget {
                   SizedBox(
                     height: 30,
                   ),
-
                 ],
               ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top:10, bottom:45),
+            padding: EdgeInsets.only(left:50, right: 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ClipOval(
+                  child: Material(
+                    color: Colors.white,
+                    child: InkWell(
+                      onTap: () async {
+                        String url = "https://map.kakao.com/link/to/카카오판교오피스,37.34,127.1066667";
+                        await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+                      },
+                      splashColor: Colors.brown.withOpacity(0.5),
+                      child: Ink(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/kakaomap_icon.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                ClipOval(
+                  child: Material(
+                    color: Colors.white,
+                    child: InkWell(
+                      onTap: () async {
+                        String url = "https://map.naver.com/v5/search/%EB%B6%84%EB%8B%B9%EC%95%A4%EC%8A%A4%ED%80%98%EC%96%B4/place/11872992?c=14149008.3990476,4486626.6477268,15,0,0,0,dh";
+                        await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+                      },
+                      splashColor: Colors.brown.withOpacity(0.5),
+                      child: Ink(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/navermap_icon.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                ClipOval(
+                  child: Material(
+                    color: Colors.white,
+                    child: InkWell(
+                      onTap: () async {
+                        String url = "kakaonavi://route?y=37.34&x=127.1066667";
+                        await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+                      },
+                      splashColor: Colors.brown.withOpacity(0.5),
+                      child: Ink(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/kakaonavi_icon.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                ClipOval(
+                  child: Material(
+                    color: Colors.white,
+                    child: InkWell(
+                      onTap: () async {
+                        String url = "tmap://?rGoName=분당앤스퀘어&rGoX=37.34&rGoY=127.1066667";
+                        await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+                      },
+                      splashColor: Colors.brown.withOpacity(0.5),
+                      child: Ink(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/tmap_icon.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Container(
@@ -211,7 +308,7 @@ class MapWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '지하3층, 지하4층 77번 기둥에서 우회전 사셔서 주차 후 웨딩홀 전용 엘리베이터 7,8호기를 이용하시면 편리합니다.',
+                  '지하3층, 지하4층 77번 기둥에서 우회전 하셔서 주차 후 웨딩홀 전용 엘리베이터 7,8호기를 이용하시면 편리합니다.',
                   style: TextStyle(
                     fontSize: 20,
                     color: Color.fromARGB(255, 85, 85, 85),
