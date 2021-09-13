@@ -127,51 +127,51 @@ class MapWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                ClipOval(
-                  child: Material(
-                    color: Colors.white,
-                    child: InkWell(
-                      onTap: () async {
-                        String url = "kakaonavi://route?x=37.34&y=127.1066667";
-                        await canLaunch(url) ? await launch(url, universalLinksOnly: true) : throw 'Could not launch $url';
-                      },
-                      splashColor: Colors.brown.withOpacity(0.5),
-                      child: Ink(
-                        height: 70,
-                        width: 70,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/kakaonavi_icon.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                ClipOval(
-                  child: Material(
-                    color: Colors.white,
-                    child: InkWell(
-                      onTap: () async {
-                        String url = "tmap://route?goalx=37.34&goaly=127.1066667&goalname=분당앤스퀘어";
-                        // String url = "tmap://?rGoName=분당앤스퀘어&rGoX=37.34&rGoY=127.1066667";
-                        await canLaunch(url) ? await launch(url, universalLinksOnly: true) : throw 'Could not launch $url';
-                      },
-                      splashColor: Colors.brown.withOpacity(0.5),
-                      child: Ink(
-                        height: 70,
-                        width: 70,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/tmap_icon.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                // ClipOval(
+                //   child: Material(
+                //     color: Colors.white,
+                //     child: InkWell(
+                //       onTap: () async {
+                //         String url = "kakaonavi://route?x=37.34&y=127.1066667";
+                //         await canLaunch(url) ? await launch(url, universalLinksOnly: true) : throw 'Could not launch $url';
+                //       },
+                //       splashColor: Colors.brown.withOpacity(0.5),
+                //       child: Ink(
+                //         height: 70,
+                //         width: 70,
+                //         decoration: BoxDecoration(
+                //           image: DecorationImage(
+                //             image: AssetImage('assets/images/kakaonavi_icon.png'),
+                //             fit: BoxFit.cover,
+                //           ),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // ClipOval(
+                //   child: Material(
+                //     color: Colors.white,
+                //     child: InkWell(
+                //       onTap: () async {
+                //         String url = "tmap://route?goalx=37.34&goaly=127.1066667&goalname=분당앤스퀘어";
+                //         // String url = "tmap://?rGoName=분당앤스퀘어&rGoX=37.34&rGoY=127.1066667";
+                //         await canLaunch(url) ? await launch(url, universalLinksOnly: true) : throw 'Could not launch $url';
+                //       },
+                //       splashColor: Colors.brown.withOpacity(0.5),
+                //       child: Ink(
+                //         height: 70,
+                //         width: 70,
+                //         decoration: BoxDecoration(
+                //           image: DecorationImage(
+                //             image: AssetImage('assets/images/tmap_icon.png'),
+                //             fit: BoxFit.cover,
+                //           ),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
