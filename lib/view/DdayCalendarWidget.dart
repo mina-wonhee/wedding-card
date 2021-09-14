@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DdayCalendarWidget extends StatelessWidget {
 
@@ -45,6 +46,31 @@ class DdayCalendarWidget extends StatelessWidget {
 
     return Column(
       children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              '구글 캘린더로 일정 추가하기',
+              style: TextStyle(
+                fontSize: 18,
+                color: Color.fromARGB(255, 110, 110, 110),
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            FloatingActionButton(onPressed: () async {
+              String url = "https://calendar.google.com/event?action=TEMPLATE&tmeid=MnFraWM1c2FqajloNGJuODlmcmdwZzFhMGMgbWluYS53b25oZWVAbQ&tmsrc=mina.wonhee%40gmail.com";
+              await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+            }, child: Icon(Icons.event)),
+            SizedBox(
+              width: 20,
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 20,
+        ),
         Container(
           color: Color.fromARGB(255, 241, 221, 207),
           padding: EdgeInsets.only(left:30, right:30),
