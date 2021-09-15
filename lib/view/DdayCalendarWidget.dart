@@ -60,7 +60,7 @@ class DdayCalendarWidget extends StatelessWidget {
               width: 10,
             ),
             FloatingActionButton(onPressed: () async {
-              String url = "https://calendar.google.com/event?action=TEMPLATE&tmeid=MnFraWM1c2FqajloNGJuODlmcmdwZzFhMGMgbWluYS53b25oZWVAbQ&tmsrc=mina.wonhee%40gmail.com";
+              String url = "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20211016T041000Z%2F20211016T051000Z&details=%EC%9B%90%ED%9D%AC%2C%20%EB%AF%BC%EC%95%84%EC%9D%98%20%EA%B2%B0%ED%98%BC%EC%8B%9D%EC%9E%85%EB%8B%88%EB%8B%A4.&location=%EB%B6%84%EB%8B%B9%EC%95%A4%EC%8A%A4%ED%80%98%EC%96%B4%20%EC%9B%A8%EB%94%A9%ED%99%80%2C%20%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%20%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%84%B1%EB%82%A8%EC%8B%9C%20%EB%B6%84%EB%8B%B9%EA%B5%AC%20%EA%B5%AC%EB%AF%B81%EB%8F%99%20%ED%83%84%EC%B2%9C%EC%83%81%EB%A1%9C151%EB%B2%88%EA%B8%B8%2020&text=%EC%9B%90%ED%9D%AC%2C%20%EB%AF%BC%EC%95%84%EC%9D%98%20%EA%B2%B0%ED%98%BC%EC%8B%9D";
               await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
             }, child: Icon(Icons.event)),
             SizedBox(
