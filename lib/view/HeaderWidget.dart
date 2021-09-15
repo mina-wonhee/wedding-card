@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-import 'dart:js' as js;
-
-class PlatformJS {
-  String name = "";
-  String version = "";
-
-  PlatformJS() {
-    var p = js.JsObject.fromBrowserObject(js.context['platform']);
-    name = p['name'];
-    version = p['version'];
-  }
-
-  bool isSafari15() {
-    return name.toLowerCase() == "safari" &&
-        int.parse(version.split(".")[0]) >= 15;
-  }
-}
+// import 'dart:js' as js;
+//
+// class PlatformJS {
+//   String name = "";
+//   String version = "";
+//
+//   PlatformJS() {
+//     var p = js.JsObject.fromBrowserObject(js.context['platform']);
+//     name = p['name'];
+//     version = p['version'];
+//   }
+//
+//   bool isSafari15() {
+//     return name.toLowerCase() == "safari" &&
+//         int.parse(version.split(".")[0]) >= 15;
+//   }
+// }
 
 class HeaderWidget extends StatefulWidget {
   const HeaderWidget({Key? key}) : super(key: key);
@@ -138,7 +138,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                       ),
                     ),
                     SizedBox(height: 7),
-                    Text(' ' + PlatformJS().name + " : " + PlatformJS().version),
+                    // Text(' ' + PlatformJS().name + " : " + PlatformJS().version),
                     Text(
                       '이원희 & 김민아',
                       style: TextStyle(
