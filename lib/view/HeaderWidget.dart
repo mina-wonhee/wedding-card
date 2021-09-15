@@ -13,87 +13,95 @@ class _HeaderWidgetState extends State<HeaderWidget> {
     double width = MediaQuery.of(context).size.width;
     double imageHeight = width * 1.2;
 
-    return Stack(
-      children: [
-        // Container(
-        //   constraints: BoxConstraints(
-        //       minHeight: width, minWidth: double.infinity),
-        //   child: CachedNetworkImage(
-        //     imageUrl: 'https://mina-wonhee.github.io/wedding-card/assets/assets/images/resize20/12.jpg',
-        //     fit: BoxFit.fitWidth,
-        //     // width: MediaQuery.of(context).size.width,
-        //     placeholder: (context, url) => Center(
-        //       child: SizedBox(
-        //         width: 40.0,
-        //         height: 40.0,
-        //         child: new CircularProgressIndicator(),
-        //       ),
-        //     ),
-        //     errorWidget: (context, url, error) => Icon(Icons.error),
-        //   ),
-        // ),
-
-        Image.asset('assets/images/resize20/12.jpg',
-          fit: BoxFit.fitWidth,
-          width: MediaQuery.of(context).size.width,
-          height: imageHeight,
-        ),
-        Positioned(
-          top: imageHeight * 0.05,
-          child: SizedBox(
-            height: imageHeight,
-            width: width,
-            child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      '10/16',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 35,
-                        color: Colors.white,
-                        shadows: <Shadow>[
-                          Shadow(
-                            offset: Offset(2.0, 2.0),
-                            blurRadius: 3.0,
-                            color: Color.fromARGB(255, 0, 0, 0),
-                          ),
-                          Shadow(
-                            offset: Offset(2.0, 2.0),
-                            blurRadius: 8.0,
-                            color: Color.fromARGB(125, 0, 0, 255),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 7),
-                    Text(
-                      '이원희 & 김민아',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.white,
-                        shadows: <Shadow>[
-                          Shadow(
-                            offset: Offset(2.0, 2.0),
-                            blurRadius: 3.0,
-                            color: Color.fromARGB(255, 0, 0, 0),
-                          ),
-                          Shadow(
-                            offset: Offset(2.0, 2.0),
-                            blurRadius: 8.0,
-                            color: Color.fromARGB(125, 0, 0, 255),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                )),
-          ),
-        ),
-      ],
+    return Container(
+      child: Image.asset('assets/images/resize20/12.jpg',
+        fit: BoxFit.fitWidth,
+        width: MediaQuery.of(context).size.width,
+        height: imageHeight,
+      ),
     );
+
+    // return Stack(
+    //   children: [
+    //     // Container(
+    //     //   constraints: BoxConstraints(
+    //     //       minHeight: width, minWidth: double.infinity),
+    //     //   child: CachedNetworkImage(
+    //     //     imageUrl: 'https://mina-wonhee.github.io/wedding-card/assets/assets/images/resize20/12.jpg',
+    //     //     fit: BoxFit.fitWidth,
+    //     //     // width: MediaQuery.of(context).size.width,
+    //     //     placeholder: (context, url) => Center(
+    //     //       child: SizedBox(
+    //     //         width: 40.0,
+    //     //         height: 40.0,
+    //     //         child: new CircularProgressIndicator(),
+    //     //       ),
+    //     //     ),
+    //     //     errorWidget: (context, url, error) => Icon(Icons.error),
+    //     //   ),
+    //     // ),
+    //
+    //     Image.asset('assets/images/resize20/12.jpg',
+    //       fit: BoxFit.fitWidth,
+    //       width: MediaQuery.of(context).size.width,
+    //       height: imageHeight,
+    //     ),
+    //     Positioned(
+    //       top: imageHeight * 0.05,
+    //       child: SizedBox(
+    //         height: imageHeight,
+    //         width: width,
+    //         child: Align(
+    //             alignment: Alignment.bottomCenter,
+    //             child: Column(
+    //               mainAxisSize: MainAxisSize.min,
+    //               mainAxisAlignment: MainAxisAlignment.center,
+    //               children: <Widget>[
+    //                 Text(
+    //                   '10/16',
+    //                   textAlign: TextAlign.center,
+    //                   style: TextStyle(
+    //                     fontSize: 35,
+    //                     color: Colors.white,
+    //                     shadows: <Shadow>[
+    //                       Shadow(
+    //                         offset: Offset(2.0, 2.0),
+    //                         blurRadius: 3.0,
+    //                         color: Color.fromARGB(255, 0, 0, 0),
+    //                       ),
+    //                       Shadow(
+    //                         offset: Offset(2.0, 2.0),
+    //                         blurRadius: 8.0,
+    //                         color: Color.fromARGB(125, 0, 0, 255),
+    //                       ),
+    //                     ],
+    //                   ),
+    //                 ),
+    //                 SizedBox(height: 7),
+    //                 Text(
+    //                   '이원희 & 김민아',
+    //                   style: TextStyle(
+    //                     fontSize: 30,
+    //                     color: Colors.white,
+    //                     shadows: <Shadow>[
+    //                       Shadow(
+    //                         offset: Offset(2.0, 2.0),
+    //                         blurRadius: 3.0,
+    //                         color: Color.fromARGB(255, 0, 0, 0),
+    //                       ),
+    //                       Shadow(
+    //                         offset: Offset(2.0, 2.0),
+    //                         blurRadius: 8.0,
+    //                         color: Color.fromARGB(125, 0, 0, 255),
+    //                       ),
+    //                     ],
+    //                   ),
+    //                 ),
+    //               ],
+    //             )),
+    //       ),
+    //     ),
+    //   ],
+    // );
   }
 }
