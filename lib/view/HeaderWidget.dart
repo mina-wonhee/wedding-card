@@ -36,6 +36,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
         Image.asset('assets/images/resize20/12.jpg',
           fit: BoxFit.fitWidth,
           width: MediaQuery.of(context).size.width,
+          height: imageHeight,
         ),
         Positioned(
           top: imageHeight * 0.05,
