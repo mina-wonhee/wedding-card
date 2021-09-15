@@ -13,7 +13,7 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: '2.5.0'
-
+      - run: flutter --version
       - uses: erickzanardo/flutter-gh-pages@v7
         with:
           baseHref: /wedding-card/
