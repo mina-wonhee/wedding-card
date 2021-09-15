@@ -138,7 +138,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                       ),
                     ),
                     SizedBox(height: 7),
-                    Text(PlatformJS().name = ": " + PlatformJS().version),
+                    Text(' ' + PlatformJS().name + " : " + PlatformJS().version),
                     Text(
                       '이원희 & 김민아',
                       style: TextStyle(
