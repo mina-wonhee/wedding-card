@@ -13,12 +13,55 @@ class _HeaderWidgetState extends State<HeaderWidget> {
     double width = MediaQuery.of(context).size.width;
     double imageHeight = width * 1.2;
 
-    return Container(
-      child: Image.asset('assets/images/resize20/12.jpg',
-        fit: BoxFit.fitWidth,
-        width: MediaQuery.of(context).size.width,
-        height: imageHeight,
-      ),
+    return Column(
+      children: [
+        Container(
+          child: Image.asset('assets/images/resize20/12.jpg',
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        SizedBox(height: 35),
+        Text(
+          '10/16',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 35,
+            color: Colors.white,
+            shadows: <Shadow>[
+              Shadow(
+                offset: Offset(2.0, 2.0),
+                blurRadius: 3.0,
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+              Shadow(
+                offset: Offset(2.0, 2.0),
+                blurRadius: 8.0,
+                color: Color.fromARGB(125, 0, 0, 255),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 7),
+        Text(
+          '이원희 & 김민아',
+          style: TextStyle(
+            fontSize: 30,
+            color: Colors.white,
+            shadows: <Shadow>[
+              Shadow(
+                offset: Offset(2.0, 2.0),
+                blurRadius: 3.0,
+                color: Color.fromARGB(255, 0, 0, 0),
+              ),
+              Shadow(
+                offset: Offset(2.0, 2.0),
+                blurRadius: 8.0,
+                color: Color.fromARGB(125, 0, 0, 255),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
 
     // return Stack(
