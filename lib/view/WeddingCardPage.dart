@@ -37,7 +37,7 @@ class _WeddingCardPageState extends State<WeddingCardPage> with AutomaticKeepAli
             DdayCalendarWidget(),
             MapWidget(),
             ContactWidget(),
-            // CeleBoard(),
+            CeleBoard(),
           ],
         ),
       )

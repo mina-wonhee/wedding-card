@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mina_wonhee_wedding/view/WeddingCardPage.dart';
+import 'dart:js' as js;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -58,6 +59,22 @@ void main() async {
 //   }
 // }
 
+class PlatformJS {
+  String name = "";
+  String version = "";
+
+  PlatformJS() {
+    var p = js.JsObject.fromBrowserObject(js.context['platform']);
+    name = p['name'];
+    version = p['version'];
+  }
+
+  bool isSafari15() {
+    return name.toLowerCase() == "safari" &&
+        int.parse(version.split(".")[0]) >= 15;
+  }
+}
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -69,7 +86,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SingleDay',
         primarySwatch: Colors.blue,
       ),
-      home: WeddingCardPage(),
+      home: Text(PlatformJS().name + " : " + PlatformJS().version)
     );
   }
 }
