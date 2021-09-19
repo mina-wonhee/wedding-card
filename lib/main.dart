@@ -17,10 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'SingleDay',
         primarySwatch: Colors.blue,
+        snackBarTheme: SnackBarThemeData(
+            backgroundColor: Colors.white,
+            contentTextStyle: TextStyle(fontFamily: "SingleDay")),
       ),
       home: WeddingCardPage(),
     );
   }
 }
-
-
