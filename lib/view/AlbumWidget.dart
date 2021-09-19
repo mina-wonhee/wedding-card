@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:pinch_zoom/pinch_zoom.dart';
 
 final List<String> imgList = [
   'assets/images/resize20/02.jpg',
@@ -26,19 +27,21 @@ final List<Widget> imageSliders = imgList.map((item) => Container(
                   borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   child: Stack(
                     children: <Widget>[
-                      CachedNetworkImage(
-                        imageUrl: 'https://mina-wonhee.github.io/wedding-card/assets/' + item,
-                        fit: BoxFit.cover,
-                        width: 1000,
-                        placeholder: (context, url) => Center(
-                          child: SizedBox(
-                            width: 40.0,
-                            height: 40.0,
-                            child: new CircularProgressIndicator(),
+                      PinchZoom(
+                        child: CachedNetworkImage(
+                          imageUrl: 'https://mina-wonhee.github.io/wedding-card/assets/' + item,
+                          fit: BoxFit.cover,
+                          width: 1000,
+                          placeholder: (context, url) => Center(
+                            child: SizedBox(
+                              width: 40.0,
+                              height: 40.0,
+                              child: new CircularProgressIndicator(),
+                            ),
                           ),
+                          errorWidget: (context, url, error) => Icon(Icons.error),
                         ),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
-                      )
+                      ),
                       // Image.asset(item, fit: BoxFit.cover, width: 1000.0),
                     ],
                   )),
