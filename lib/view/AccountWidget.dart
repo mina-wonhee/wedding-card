@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mina_wonhee_wedding/model/Account.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class AccountWidget extends StatefulWidget {
+List<Account> groomAccounts = [
+  Account('아버지 계좌', '신한은행 (예금주 : 이의갑)', '602-04-015883', '60204015883'),
+  Account('어머니 계좌', '신한은행 (예금주 : 김연숙)', '613-06-049930', '61306049930'),
+  Account('신랑 계좌', '카카오뱅크 (예금주 : 이원희)', '3333-06-3095577', '3333063095577'),
+];
 
+List<Account> brideAccounts = [
+  Account('아버지 계좌', 'NH농협 (예금주 : 김정일)', '302-0307-6889-41', '3020307688941'),
+  Account('어머니 계좌', 'NH농협 (예금주 : 정원순)', '235094-56-008260', '23509456008260'),
+  Account('신부 계좌', '카카오뱅크 (예금주 : 김민아)', '3333-15-2966088', '3333152966088'),
+];
+
+class AccountWidget extends StatefulWidget {
   @override
   _AccountWidgetState createState() => _AccountWidgetState();
 }
@@ -24,7 +36,9 @@ class _AccountWidgetState extends State<AccountWidget> {
             color: Color.fromARGB(255, 198, 152, 86),
           ),
         ),
-        SizedBox(height: 25,),
+        SizedBox(
+          height: 25,
+        ),
         ExpansionPanelList(
           animationDuration: Duration(milliseconds: 500),
           children: [
@@ -54,7 +68,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             height: 15,
                           ),
                           Text(
-                            '아버지 계좌',
+                            groomAccounts[0].name,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -62,7 +76,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             textAlign: TextAlign.start,
                           ),
                           Text(
-                            '신한은행 (예금주 : 이의갑)',
+                            groomAccounts[0].description,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -73,7 +87,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '602-04-015883',
+                                groomAccounts[0].formattedNumberString,
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
@@ -82,10 +96,20 @@ class _AccountWidgetState extends State<AccountWidget> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Clipboard.setData(ClipboardData(text: "60204015883"));
-                                  ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("60204015883 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
+                                  Clipboard.setData(ClipboardData(
+                                      text: groomAccounts[0].numberString));
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                          "${groomAccounts[0].numberString} 복사되었습니다."),
+                                      duration: Duration(milliseconds: 600),
+                                    ),
+                                  );
                                 },
-                                child: Text('복사하기', style: TextStyle(fontSize: 15),),
+                                child: Text(
+                                  '복사하기',
+                                  style: TextStyle(fontSize: 15),
+                                ),
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.brown, // background
                                 ),
@@ -100,7 +124,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             height: 15,
                           ),
                           Text(
-                            '어머니 계좌',
+                            groomAccounts[1].name,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -108,7 +132,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             textAlign: TextAlign.start,
                           ),
                           Text(
-                            '신한은행 (예금주 : 김연숙)',
+                            groomAccounts[1].description,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -119,7 +143,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '613-06-049930',
+                                groomAccounts[1].formattedNumberString,
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
@@ -128,10 +152,20 @@ class _AccountWidgetState extends State<AccountWidget> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Clipboard.setData(ClipboardData(text: "61306049930"));
-                                  ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("61306049930 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
+                                  Clipboard.setData(ClipboardData(
+                                      text: groomAccounts[1].numberString));
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                          "${groomAccounts[1].numberString} 복사되었습니다."),
+                                      duration: Duration(milliseconds: 600),
+                                    ),
+                                  );
                                 },
-                                child: Text('복사하기', style: TextStyle(fontSize: 15),),
+                                child: Text(
+                                  '복사하기',
+                                  style: TextStyle(fontSize: 15),
+                                ),
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.brown, // background
                                 ),
@@ -146,7 +180,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             height: 15,
                           ),
                           Text(
-                            '신랑 계좌',
+                            groomAccounts[2].name,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -154,7 +188,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             textAlign: TextAlign.start,
                           ),
                           Text(
-                            '카카오뱅크 (예금주 : 이원희)',
+                            groomAccounts[2].description,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -165,7 +199,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '3333-06-3095577',
+                                groomAccounts[2].formattedNumberString,
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
@@ -176,10 +210,21 @@ class _AccountWidgetState extends State<AccountWidget> {
                                 children: [
                                   ElevatedButton(
                                     onPressed: () {
-                                      Clipboard.setData(ClipboardData(text: "3333063095577"));
-                                      ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("3333063095577 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
+                                      Clipboard.setData(ClipboardData(
+                                          text: groomAccounts[2].numberString));
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                              "${groomAccounts[2].numberString} 복사되었습니다."),
+                                          duration: Duration(milliseconds: 600),
+                                        ),
+                                      );
                                     },
-                                    child: Text('복사하기', style: TextStyle(fontSize: 15),),
+                                    child: Text(
+                                      '복사하기',
+                                      style: TextStyle(fontSize: 15),
+                                    ),
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.brown, // background
                                     ),
@@ -192,17 +237,24 @@ class _AccountWidgetState extends State<AccountWidget> {
                                     width: 50,
                                     child: ElevatedButton(
                                       onPressed: () async {
-                                        String url = "https://qr.kakaopay.com/281006011188452691004605";
-                                        await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+                                        String url =
+                                            "https://qr.kakaopay.com/281006011188452691004605";
+                                        await canLaunch(url)
+                                            ? await launch(url)
+                                            : throw 'Could not launch $url';
                                       },
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(10.0),
-                                        child: Image.asset('assets/images/kakaopay.png'),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                        child: Image.asset(
+                                            'assets/images/kakaopay.png'),
                                       ),
                                       style: ElevatedButton.styleFrom(
-                                        padding: EdgeInsets.only(left: 0, right: 0),
+                                        padding:
+                                            EdgeInsets.only(left: 0, right: 0),
                                         shape: new RoundedRectangleBorder(
-                                          borderRadius: new BorderRadius.circular(10.0),
+                                          borderRadius:
+                                              new BorderRadius.circular(10.0),
                                         ),
                                         primary: Colors.transparent,
                                         onPrimary: Colors.transparent,
@@ -210,7 +262,6 @@ class _AccountWidgetState extends State<AccountWidget> {
                                       ),
                                     ),
                                   )
-
                                 ],
                               )
                             ],
@@ -234,7 +285,9 @@ class _AccountWidgetState extends State<AccountWidget> {
             setState(() {});
           },
         ),
-        SizedBox(height: 15,),
+        SizedBox(
+          height: 15,
+        ),
         ExpansionPanelList(
           animationDuration: Duration(milliseconds: 500),
           children: [
@@ -264,7 +317,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             height: 15,
                           ),
                           Text(
-                            '아버지 계좌',
+                            brideAccounts[0].name,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -272,7 +325,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             textAlign: TextAlign.start,
                           ),
                           Text(
-                            'NH농협 (예금주 : 김정일)',
+                            brideAccounts[0].description,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -283,7 +336,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '302-0307-6889-41',
+                                brideAccounts[0].formattedNumberString,
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
@@ -292,10 +345,20 @@ class _AccountWidgetState extends State<AccountWidget> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Clipboard.setData(ClipboardData(text: "3020307688941"));
-                                  ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("3020307688941 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
+                                  Clipboard.setData(ClipboardData(
+                                      text: brideAccounts[0].numberString));
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                          "${brideAccounts[0].numberString} 복사되었습니다."),
+                                      duration: Duration(milliseconds: 600),
+                                    ),
+                                  );
                                 },
-                                child: Text('복사하기', style: TextStyle(fontSize: 15),),
+                                child: Text(
+                                  '복사하기',
+                                  style: TextStyle(fontSize: 15),
+                                ),
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.brown, // background
                                 ),
@@ -310,7 +373,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             height: 15,
                           ),
                           Text(
-                            '어머니 계좌',
+                            brideAccounts[1].name,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -318,7 +381,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             textAlign: TextAlign.start,
                           ),
                           Text(
-                            'NH농협 (예금주 : 정원순)',
+                            brideAccounts[1].description,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -329,7 +392,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '235094-56-008260',
+                                brideAccounts[1].formattedNumberString,
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
@@ -338,10 +401,20 @@ class _AccountWidgetState extends State<AccountWidget> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Clipboard.setData(ClipboardData(text: "23509456008260"));
-                                  ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("23509456008260 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
+                                  Clipboard.setData(ClipboardData(
+                                      text: brideAccounts[1].numberString));
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                          "${brideAccounts[1].numberString} 복사되었습니다."),
+                                      duration: Duration(milliseconds: 600),
+                                    ),
+                                  );
                                 },
-                                child: Text('복사하기', style: TextStyle(fontSize: 15),),
+                                child: Text(
+                                  '복사하기',
+                                  style: TextStyle(fontSize: 15),
+                                ),
                                 style: ElevatedButton.styleFrom(
                                   primary: Colors.brown, // background
                                 ),
@@ -356,7 +429,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             height: 15,
                           ),
                           Text(
-                            '신부 계좌',
+                            brideAccounts[2].name,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -364,7 +437,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             textAlign: TextAlign.start,
                           ),
                           Text(
-                            '카카오뱅크 (예금주 : 김민아)',
+                            brideAccounts[2].description,
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 85, 85, 85),
@@ -375,7 +448,7 @@ class _AccountWidgetState extends State<AccountWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '3333-15-2966088',
+                                brideAccounts[2].formattedNumberString,
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Color.fromARGB(255, 85, 85, 85),
@@ -386,10 +459,21 @@ class _AccountWidgetState extends State<AccountWidget> {
                                 children: [
                                   ElevatedButton(
                                     onPressed: () {
-                                      Clipboard.setData(ClipboardData(text: "3333152966088"));
-                                      ScaffoldMessenger.of(context).showSnackBar( SnackBar( content: Text("3333152966088 복사되었습니다."), duration: Duration(milliseconds: 600), ), );
+                                      Clipboard.setData(ClipboardData(
+                                          text: brideAccounts[2].numberString));
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                              "${brideAccounts[2].numberString} 복사되었습니다."),
+                                          duration: Duration(milliseconds: 600),
+                                        ),
+                                      );
                                     },
-                                    child: Text('복사하기', style: TextStyle(fontSize: 15),),
+                                    child: Text(
+                                      '복사하기',
+                                      style: TextStyle(fontSize: 15),
+                                    ),
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.brown, // background
                                     ),
@@ -402,17 +486,24 @@ class _AccountWidgetState extends State<AccountWidget> {
                                     width: 50,
                                     child: ElevatedButton(
                                       onPressed: () async {
-                                        String url = "https://qr.kakaopay.com/281006011189849511006206";
-                                        await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
+                                        String url =
+                                            "https://qr.kakaopay.com/281006011189849511006206";
+                                        await canLaunch(url)
+                                            ? await launch(url)
+                                            : throw 'Could not launch $url';
                                       },
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(10.0),
-                                        child: Image.asset('assets/images/kakaopay.png'),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                        child: Image.asset(
+                                            'assets/images/kakaopay.png'),
                                       ),
                                       style: ElevatedButton.styleFrom(
-                                        padding: EdgeInsets.only(left: 0, right: 0),
+                                        padding:
+                                            EdgeInsets.only(left: 0, right: 0),
                                         shape: new RoundedRectangleBorder(
-                                          borderRadius: new BorderRadius.circular(10.0),
+                                          borderRadius:
+                                              new BorderRadius.circular(10.0),
                                         ),
                                         primary: Colors.transparent,
                                         onPrimary: Colors.transparent,
@@ -420,7 +511,6 @@ class _AccountWidgetState extends State<AccountWidget> {
                                       ),
                                     ),
                                   )
-
                                 ],
                               )
                             ],
