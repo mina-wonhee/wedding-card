@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mina_wonhee_wedding/model/Account.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'dart:js' as js;
 
 List<Account> groomAccounts = [
   Account('아버지 계좌', '신한은행 (예금주 : 이의갑)', '602-04-015883', '60204015883'),
@@ -23,6 +25,21 @@ class AccountWidget extends StatefulWidget {
 class _AccountWidgetState extends State<AccountWidget> {
   bool _groomAccountExpanded = false;
   bool _brideAccountExpanded = false;
+
+  void copyAccountValue(String accountValue) {
+    if (kIsWeb) {
+      js.context.callMethod('copyToClipboard', [accountValue]);
+    } else {
+      Clipboard.setData(ClipboardData(text: accountValue));
+    }
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("$accountValue 복사되었습니다."),
+        duration: Duration(milliseconds: 600),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,15 +113,8 @@ class _AccountWidgetState extends State<AccountWidget> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Clipboard.setData(ClipboardData(
-                                      text: groomAccounts[0].numberString));
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                          "${groomAccounts[0].numberString} 복사되었습니다."),
-                                      duration: Duration(milliseconds: 600),
-                                    ),
-                                  );
+                                  copyAccountValue(
+                                      groomAccounts[0].numberString);
                                 },
                                 child: Text(
                                   '복사하기',
@@ -152,15 +162,8 @@ class _AccountWidgetState extends State<AccountWidget> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Clipboard.setData(ClipboardData(
-                                      text: groomAccounts[1].numberString));
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                          "${groomAccounts[1].numberString} 복사되었습니다."),
-                                      duration: Duration(milliseconds: 600),
-                                    ),
-                                  );
+                                  copyAccountValue(
+                                      groomAccounts[1].numberString);
                                 },
                                 child: Text(
                                   '복사하기',
@@ -210,16 +213,8 @@ class _AccountWidgetState extends State<AccountWidget> {
                                 children: [
                                   ElevatedButton(
                                     onPressed: () {
-                                      Clipboard.setData(ClipboardData(
-                                          text: groomAccounts[2].numberString));
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                              "${groomAccounts[2].numberString} 복사되었습니다."),
-                                          duration: Duration(milliseconds: 600),
-                                        ),
-                                      );
+                                      copyAccountValue(
+                                          groomAccounts[2].numberString);
                                     },
                                     child: Text(
                                       '복사하기',
@@ -345,15 +340,8 @@ class _AccountWidgetState extends State<AccountWidget> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Clipboard.setData(ClipboardData(
-                                      text: brideAccounts[0].numberString));
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                          "${brideAccounts[0].numberString} 복사되었습니다."),
-                                      duration: Duration(milliseconds: 600),
-                                    ),
-                                  );
+                                  copyAccountValue(
+                                      brideAccounts[0].numberString);
                                 },
                                 child: Text(
                                   '복사하기',
@@ -401,15 +389,8 @@ class _AccountWidgetState extends State<AccountWidget> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  Clipboard.setData(ClipboardData(
-                                      text: brideAccounts[1].numberString));
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                          "${brideAccounts[1].numberString} 복사되었습니다."),
-                                      duration: Duration(milliseconds: 600),
-                                    ),
-                                  );
+                                  copyAccountValue(
+                                      brideAccounts[1].numberString);
                                 },
                                 child: Text(
                                   '복사하기',
@@ -459,16 +440,8 @@ class _AccountWidgetState extends State<AccountWidget> {
                                 children: [
                                   ElevatedButton(
                                     onPressed: () {
-                                      Clipboard.setData(ClipboardData(
-                                          text: brideAccounts[2].numberString));
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                              "${brideAccounts[2].numberString} 복사되었습니다."),
-                                          duration: Duration(milliseconds: 600),
-                                        ),
-                                      );
+                                      copyAccountValue(
+                                          brideAccounts[2].numberString);
                                     },
                                     child: Text(
                                       '복사하기',
