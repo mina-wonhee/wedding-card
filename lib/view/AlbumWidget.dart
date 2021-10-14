@@ -18,44 +18,44 @@ final List<String> imgList = [
   'assets/images/resize20/33-1.jpg',
 ];
 
-
-
-final List<Widget> imageSliders = imgList.map((item) => Container(
-            child: Container(
-              margin: EdgeInsets.all(5.0),
-              child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                  child: Stack(
-                    children: <Widget>[
-                      PinchZoom(
-                        child: CachedNetworkImage(
-                          imageUrl: 'https://mina-wonhee.github.io/wedding-card/assets/' + item,
-                          fit: BoxFit.cover,
-                          width: 1000,
-                          placeholder: (context, url) => Center(
-                            child: SizedBox(
-                              width: 40.0,
-                              height: 40.0,
-                              child: new CircularProgressIndicator(),
-                            ),
+final List<Widget> imageSliders = imgList
+    .map((item) => Container(
+          child: Container(
+            margin: EdgeInsets.all(5.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                child: Stack(
+                  children: <Widget>[
+                    PinchZoom(
+                      child: CachedNetworkImage(
+                        imageUrl:
+                            'https://mina-wonhee.github.io/wedding-card/assets/' +
+                                item,
+                        fit: BoxFit.cover,
+                        width: 1000,
+                        placeholder: (context, url) => Center(
+                          child: SizedBox(
+                            width: 40.0,
+                            height: 40.0,
+                            child: new CircularProgressIndicator(),
                           ),
-                          errorWidget: (context, url, error) => Icon(Icons.error),
                         ),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
-                      // Image.asset(item, fit: BoxFit.cover, width: 1000.0),
-                    ],
-                  )),
-            ),
-          )).toList();
+                    ),
+                    // Image.asset(item, fit: BoxFit.cover, width: 1000.0),
+                  ],
+                )),
+          ),
+        ))
+    .toList();
 
 class AlbumWidget extends StatefulWidget {
-
   @override
   _AlbumWidgetState createState() => _AlbumWidgetState();
 }
 
 class _AlbumWidgetState extends State<AlbumWidget> {
-
   final CarouselController _controller = CarouselController();
 
   int _current = 0;
@@ -66,7 +66,6 @@ class _AlbumWidgetState extends State<AlbumWidget> {
       children: [
         CarouselSlider(
           items: imageSliders,
-
           carouselController: _controller,
           options: CarouselOptions(
               // autoPlay: true,
@@ -93,8 +92,8 @@ class _AlbumWidgetState extends State<AlbumWidget> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: (Theme.of(context).brightness == Brightness.dark
-                        ? Colors.white
-                        : Colors.black)
+                            ? Colors.white
+                            : Colors.black)
                         .withOpacity(_current == entry.key ? 0.9 : 0.4)),
               ),
             );
@@ -104,4 +103,3 @@ class _AlbumWidgetState extends State<AlbumWidget> {
     );
   }
 }
-

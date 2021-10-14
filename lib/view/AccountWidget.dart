@@ -23,8 +23,8 @@ class AccountWidget extends StatefulWidget {
 }
 
 class _AccountWidgetState extends State<AccountWidget> {
-  bool _groomAccountExpanded = false;
-  bool _brideAccountExpanded = false;
+  bool _groomAccountExpanded = true;
+  bool _brideAccountExpanded = true;
 
   void copyAccountValue(String accountValue) {
     if (kIsWeb) {
